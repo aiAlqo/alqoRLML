@@ -5,5 +5,5 @@ st.title('🏉 RL Machine Learning App')
 
 st.info('This is app builds a machine learning model')
 
-df = pd.read_csv('nrldata_2017to21.csv')
+df = pd.read_csv('data/nrldata_2017to21.csv')
 df
