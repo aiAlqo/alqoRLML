@@ -11,6 +11,6 @@ with st.expander('NRL Data'):
   nrl_df
 
 with st.expander('AFL Data'):
-st.write('**Raw Data 2012 to 2021**')
-afl_df = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/AFL2012to24.csv')
-afl_df
+  st.write('**Raw Data 2012 to 2021**')
+  afl_df = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/AFL2012to24.csv')
+  afl_df
