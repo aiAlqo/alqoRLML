@@ -16,5 +16,5 @@ with st.expander('AFL Data'):
   afl_df
 
 # Guide preparations
-with st.sidebar
+with st.sidebar:
   st.header('Tipping Guide')
