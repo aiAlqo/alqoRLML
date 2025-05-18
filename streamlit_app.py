@@ -21,5 +21,5 @@ with st.sidebar:
 
   with st.expander('NRL'):
     st.write('**Round 12**')
-    nrl_guide = pd.rea_excel('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/NRL1.csv')
+    nrl_guide = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/NRL1.csv')
     nrl_guide
