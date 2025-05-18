@@ -21,5 +21,5 @@ with st.sidebar:
 
   with st.expander('NRL'):
     st.write('**Round 12**')
-    nrl_guide = pd.rea_excel('https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FaiAlqo%2FalqoRLML%2Frefs%2Fheads%2Fmaster%2Fdata%2FNRL1.xlsx&wdOrigin=BROWSELINK')
+    nrl_guide = pd.rea_excel('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/NRL1.csv')
     nrl_guide
