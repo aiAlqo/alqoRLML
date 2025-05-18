@@ -18,3 +18,6 @@ with st.expander('AFL Data'):
 # Guide preparations
 with st.sidebar:
   st.header('Tipping Guide')
+
+  with st.expander('NRL'):
+  st.write('**Round 12**')
