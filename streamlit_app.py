@@ -11,7 +11,7 @@ with st.expander('AFL Data'):
   afl_df
   #X = df.drop('HTWinner', axis=22, 'HTWinningMargin', axis=23, 'FTWinner', axis=24, 'FTWinningMargin', axis=25, 'TotalMatchPoints', axis=26, 'TotalMatchGoals', axis=27)
   st.write('**X**')
-  X = df.drop('HTWinner', axis=22)
+  X = df.drop('HTWinner', axis=2)
   X
   
   st.write('**y**')
