@@ -25,8 +25,8 @@ teams = ['Adelaide Crows', 'Brisbane Lions', 'Carlton', 'Collingwood', 'Essendon
 
 with st.sidebar.header('Input Features'):
 
-home_team = st.sidebar.selectbox("Select Home Team", teams, key='home_team')
-away_team = st.sidebar.selectbox("Select Away Team", teams, key='away_team')
+  home_team = st.sidebar.selectbox("Select Home Team", teams, key='home_team')
+  away_team = st.sidebar.selectbox("Select Away Team", teams, key='away_team')
 
 # Optional: Check to avoid selecting the same team
   if home_team == away_team:
