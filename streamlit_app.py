@@ -23,5 +23,7 @@ with st.expander('AFL Data'):
 #Data preparations
 with st.sidebar:
   st.header('Input Features')
-
+  "Input match details below:"
+  HomeTeam = st.selectbox('Home Team', ('Greater Western Sydney','Richmond','Hawthorn','Melbourne','Gold Coast','Fremantle','North Melbourne','Western Bulldogs','Port Adelaide','Brisbane Lions','Essendon','Sydney','West Coast','Adelaide','Collingwood','St Kilda','Geelong','Carlton'))
+  AwayTeam = st.selectbox('Away Team', ('Greater Western Sydney','Richmond','Hawthorn','Melbourne','Gold Coast','Fremantle','North Melbourne','Western Bulldogs','Port Adelaide','Brisbane Lions','Essendon','Sydney','West Coast','Adelaide','Collingwood','St Kilda','Geelong','Carlton'))
 
