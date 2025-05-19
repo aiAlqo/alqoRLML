@@ -26,7 +26,9 @@ teams = ['Adelaide Crows', 'Brisbane Lions', 'Carlton', 'Collingwood', 'Essendon
 
 with st.sidebar:
   st.header('Input Features')
-  "Input match details below:"
-  HomeTeam = st.selectbox('Home Team', teams)
+  st.write('Input match details below:')
+  HomeTeam = st.sidebar.selectbox('Home Team', teams, key='HomeTeam')
   AwayTeam = st.selectbox('Away Team', teams)
+
+
 
