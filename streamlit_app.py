@@ -9,7 +9,6 @@ with st.expander('AFL Data'):
   st.write('**Raw Data 2012 to 2021**')
   afl_df = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/AFL2012to24.csv')
   afl_df
-
   #X = df.drop('HTWinner', axis=22, 'HTWinningMargin', axis=23, 'FTWinner', axis=24, 'FTWinningMargin', axis=25, 'TotalMatchPoints', axis=26, 'TotalMatchGoals', axis=27)
   st.write('**X**')
   X = df.drop('HTWinner', axis=22)
@@ -19,6 +18,7 @@ with st.expander('AFL Data'):
   y = df.HTWinner
   y
 
+"""
 # Sample data
 data = {
     'Item': ['Apples', 'Bananas', 'Cherries'],
@@ -60,3 +60,4 @@ else:
 # Guide preparations
 with st.sidebar:
   st.header('Tipping Guide')
+"""
