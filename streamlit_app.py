@@ -30,5 +30,8 @@ with st.sidebar:
   HomeTeam = st.sidebar.selectbox('Home Team', teams, key='HomeTeam')
   AwayTeam = st.selectbox('Away Team', teams)
 
+  st.write(f"**Home Team:** {HomeTeam}")
+  st.write(f"**Away Tea:** {AwayTeam}")
+
 
 
