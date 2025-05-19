@@ -21,17 +21,9 @@ with st.expander('AFL Data'):
   st.dataframe(y)
 
 #Data preparations
-#List of AFL teams
 teams = ['Adelaide Crows', 'Brisbane Lions', 'Carlton', 'Collingwood', 'Essendon','Fremantle', 'Geelong Cats', 'Gold Coast Suns', 'GWS Giants', 'Hawthorn','Melbourne', 'North Melbourne', 'Port Adelaide', 'Richmond', 'St Kilda','Sydney Swans', 'West Coast Eagles', 'Western Bulldogs']
 
-with st.sidebar:
-  st.header('Input Features')
-  st.write('Input match details below:')
-  HomeTeam = st.sidebar.selectbox('Home Team', teams, key='HomeTeam')
-  AwayTeam = st.selectbox('Away Team', teams)
-
-  st.write(f"**Home Team:** {HomeTeam}")
-  st.write(f"**Away Tea:** {AwayTeam}")
+with st.sidebar.header('Input Features')
 
 
 
