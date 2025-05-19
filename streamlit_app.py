@@ -10,13 +10,15 @@ with st.expander('AFL Data'):
   afl_df = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/AFL2012to24_1.csv')
   afl_df
   #X = df.drop('HTWinner', axis=22, 'HTWinningMargin', axis=23, 'FTWinner', axis=24, 'FTWinningMargin', axis=25, 'TotalMatchPoints', axis=26, 'TotalMatchGoals', axis=27)
+  cols_to_drop = ['HTWinner', 'HTWinningMargin', 'FTWinner', 'FTWinningMargin', 'TotalMatchPoints', 'TotalMatchGoals']
+  
   st.write('**X**')
-  X = afl_df.drop('HTWinner', 'HTWinningMargin', 'FTWinner', 'FTWinningMargin', 'TotalMatchPoints', 'TotalMatchGoals', axis=1)
-  X
+  X = afl_df.drop(cols_to_drop, axis=1)
+  st.dataframe(X)
   
   st.write('**y**')
-  y = afl_df.HTWinner
-  y
+  y = afl_df[cols_to_drop]
+  st.dataframe(y)
 
 # Sample data
 data = {
