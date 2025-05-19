@@ -23,7 +23,7 @@ with st.expander('AFL Data'):
 #Data preparations
 teams = ['Adelaide Crows', 'Brisbane Lions', 'Carlton', 'Collingwood', 'Essendon','Fremantle', 'Geelong Cats', 'Gold Coast Suns', 'GWS Giants', 'Hawthorn','Melbourne', 'North Melbourne', 'Port Adelaide', 'Richmond', 'St Kilda','Sydney Swans', 'West Coast Eagles', 'Western Bulldogs']
 
-with st.sidebar.header('Input Features')
+with st.sidebar.header('Input Features'):
 
 
 
