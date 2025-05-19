@@ -15,11 +15,44 @@ with st.expander('AFL Data'):
   afl_df = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/AFL2012to24.csv')
   afl_df
 
+# Sample data
+data = {
+    'Item': ['Apples', 'Bananas', 'Cherries'],
+    'Price per unit': [1.5, 0.8, 2.0],
+    'Available Qty': [100, 200, 150]
+}
+df = pd.DataFrame(data)
+
+st.title("Interactive Table Selector")
+
+# Display table with checkboxes
+st.subheader("Select items:")
+selected_items = []
+
+for i, row in df.iterrows():
+    if st.checkbox(f"{row['Item']} (${row['Price per unit']}/unit)", key=row['Item']):
+        qty = st.number_input(f"Enter quantity for {row['Item']} (max {row['Available Qty']}):", 
+                              min_value=0, 
+                              max_value=row['Available Qty'], 
+                              key=f"qty_{row['Item']}")
+        selected_items.append({
+            'Item': row['Item'],
+            'Unit Price': row['Price per unit'],
+            'Quantity': qty,
+            'Total': qty * row['Price per unit']
+        })
+
+# Show result
+if selected_items:
+    st.subheader("Your Selection Summary")
+    result_df = pd.DataFrame(selected_items)
+    st.dataframe(result_df)
+
+    grand_total = result_df['Total'].sum()
+    st.success(f"**Grand Total: ${grand_total:.2f}**")
+else:
+    st.info("Select at least one item to see calculations.")
+
 # Guide preparations
 with st.sidebar:
   st.header('Tipping Guide')
-
-  with st.expander('NRL'):
-    st.write('**Round 12**')
-    nrl_guide = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/NRL1.csv')
-    nrl_guide
