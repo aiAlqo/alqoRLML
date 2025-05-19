@@ -23,7 +23,9 @@ with st.expander('AFL Data'):
 #Data preparations
 teams = ['Adelaide Crows', 'Brisbane Lions', 'Carlton', 'Collingwood', 'Essendon','Fremantle', 'Geelong Cats', 'Gold Coast Suns', 'GWS Giants', 'Hawthorn','Melbourne', 'North Melbourne', 'Port Adelaide', 'Richmond', 'St Kilda','Sydney Swans', 'West Coast Eagles', 'Western Bulldogs']
 
-with st.sidebar.header('Input Features'):
+with st.sidebar:
+  st.header('Input Features')
+  st.write('**Fill out details of match for this ML model to run you prediction**')
 
   home_team = st.sidebar.selectbox("Select Home Team", teams, key='home_team')
   away_team = st.sidebar.selectbox("Select Away Team", teams, key='away_team')
