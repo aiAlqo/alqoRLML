@@ -34,14 +34,14 @@ with st.sidebar:
   home_team = st.selectbox("Select Home Team", teams, key='home_team')
   away_team = st.selectbox("Select Away Team", teams, key='away_team')
   
-# Optional: Check to avoid selecting the same team
+  # Optional: Check to avoid selecting the same team
   if home_team == away_team:
       st.warning("⚠️Home and Away teams must be different.")
 
   temp_range = st.slider("🌡️ Forecasted Temperature Range (°C)", -10.0, 38.0, (7.6, 16.0), step=0.1)
   weather_forecast = st.select_slider("🌤️ Forecasted Weather Condition", options=weather_conditions)
 
-# Show selections
+  # Show selections
   st.subheader("Confirm below your selected Match details")
   st.write(f"**Match Date:** {d}")
   st.write(f"**Match Time:** {t}")
@@ -50,7 +50,7 @@ with st.sidebar:
   st.write(f"**Forecasted Temp range:** {temp_range[0]}°C to {temp_range[1]}°C")
   st.write(f"**Forecasted Weather:** {weather_forecast}")
 
-#Create a DataFrame for the input features
+  #Create a DataFrame for the input features
   data = {'d': d,
           't': t,
           'home_team': home_team,
@@ -59,12 +59,6 @@ with st.sidebar:
           'weather_forecast': weather_forecast}
   input_df = pd.DataFrame(data, index=[0])
   input_preds = pd.concat([input_df, X], axis=0)
-
-with st.expander('Input feature'):
-  st.write('**Input Predicts**')
-  st.dataframe(input_df)
-  st.write('**Combined data**')
-  st.write(input_preds)
 
 #Data preparation #2
 
