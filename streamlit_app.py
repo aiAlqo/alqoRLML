@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import datetime
 
 st.title('🏉 AFL ML Predictor App')
 
@@ -27,16 +28,22 @@ with st.sidebar:
   st.header('Input Features')
   st.write('**Fill out details of match for this ML model to run you prediction**')
 
+  d = st.date_input("Date of Match", value=None)
+  t = st.time_input("Time", datetime.time(8, 45))
   home_team = st.sidebar.selectbox("Select Home Team", teams, key='home_team')
   away_team = st.sidebar.selectbox("Select Away Team", teams, key='away_team')
+  temp_range = st.slider("Forecasted temperature range?", -10.0, 38.0, (7.6, 16.0))
+  weather_forecast = st.select_slider("Forecasted weather condition?", options=["Fine/Clear","Fair/Partly Cloudy","Cloudy/Overcast","Showery/Scattered Rain","Rainy/Wet","Windy/Breezy","Stormy","Severe"]
 
 # Optional: Check to avoid selecting the same team
   if home_team == away_team:
       st.sidebar.warning("Home and Away teams must be different.")
 
 # Show selections
+  st.write(f"**Match Date:** {d}")
+  st.write(f"**Match Time:** {t}")
   st.write(f"**Home Team:** {home_team}")
   st.write(f"**Away Team:** {away_team}")
-
-
-
+  st.write(f"**Forecast Temp range:** {temp_range}")
+  st.write(f"**Forecasted Weather:** {weather_forecast}")
+  
