@@ -50,4 +50,23 @@ with st.sidebar:
   st.write(f"**Forecasted Temp range:** {temp_range[0]}°C to {temp_range[1]}°C")
   st.write(f"**Forecasted Weather:** {weather_forecast}")
 
+#Create a DataFrame for the input features
+  data = {'d': d,
+          't': t,
+          'home_team': home_team,
+          'away_team': away_team,
+          'temp_range': temp_range,
+          'weather_forecast': weather_forecast}
+  input_df = pd.DataFrame(data, index=[0])
+  input_preds = pd.concat([input_df, X], axis=0)
+
+with st.expander('Input feature'):
+  st.write('**Input Predicts**')
+  st.dataframe(input_df)
+  st.write('**Combined data**')
+  st.write(input_preds)
+
+#Data preparation #2
+
+
   
