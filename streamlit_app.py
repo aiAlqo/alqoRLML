@@ -8,7 +8,7 @@ st.info('This app is a machine learning prediction model for AFL and NRL')
 
 with st.expander('AFL Data'):
   st.write('**Raw Data 2012 to 2021**')
-  afl_df = pd.read_csv('https://raw.githubusercontent.com/aiAlqo/alqoRLML/refs/heads/master/data/AFL2012to24_2.csv')
+  afl_df = pd.read_csv('https://https://raw.githubusercontent.com/aiAlqo/alqoRLML/master/data/AFL2012to24_2.csv')
   afl_df
   #X = df.drop('HTWinner', axis=22, 'HTWinningMargin', axis=23, 'FTWinner', axis=24, 'FTWinningMargin', axis=25, 'TotalMatchPoints', axis=26, 'TotalMatchGoals', axis=27)
   cols_to_drop = ['HTWinner', 'HTWinningMargin', 'FTWinner', 'FTWinningMargin', 'TotalMatchPoints', 'TotalMatchGoals']
