@@ -23,7 +23,6 @@ with st.expander('AFL Data'):
 
 #Data preparations
 teams = ['Adelaide Crows', 'Brisbane Lions', 'Carlton', 'Collingwood', 'Essendon','Fremantle', 'Geelong Cats', 'Gold Coast Suns', 'GWS Giants', 'Hawthorn','Melbourne', 'North Melbourne', 'Port Adelaide', 'Richmond', 'St Kilda','Sydney Swans', 'West Coast Eagles', 'Western Bulldogs']
-weather_conditions =["Fine/Clear","Fair/Partly Cloudy","Cloudy/Overcast","Showery/Scattered Rain","Rainy/Wet","Windy/Breezy","Stormy","Severe"]
 
 with st.sidebar:
   st.header('Input Features')
@@ -32,22 +31,8 @@ with st.sidebar:
   d = st.date_input("Date of Match", value=datetime.date.today())
   t = st.time_input("Time of Match", value=datetime.time(13, 0))
   
-  home_team = st.sidebar.selectbox("Select Home Team", teams, key='home_team')
-  away_team = st.sidebar.selectbox("Select Away Team", teams, key='away_team')
-  
-# Optional: Check to avoid selecting the same team
-  if home_team == away_team:
-      st.sidebar.warning("⚠️Home and Away teams must be different.")
-
-  temp_range = st.slider("🌡️ Forecasted Temperature Range (°C)", -10.0, 38.0, (7.6, 16.0) step=0.1)
-  weather_forecast = st.select_slider("🌤️ Forecasted Weather Condition", options=weather_conditions)
-
 # Show selections
   st.subheader("Confirm below your selected Match details")
   st.write(f"**Match Date:** {d}")
   st.write(f"**Match Time:** {t}")
-  st.write(f"**Home Team:** {home_team}")
-  st.write(f"**Away Team:** {away_team}")
-  st.write(f"**Forecasted Temp range:** {temp_range[0]}°C to {temp_range[1]}°C")
-  st.write(f"**Forecasted Weather:** {weather_forecast}")
   
