@@ -57,8 +57,9 @@ with st.sidebar:
           'away_team': away_team,
           'temp_range': temp_range,
           'weather_forecast': weather_forecast}
-  input_df = pd.DataFrame(data, index=[0])
-  input_preds = pd.concat([input_df, X], axis=0)
+  input_df = pd.DataFrame(data)
+  input_df = input_df[X.columns]
+  input_preds = pd.concat([input_df, X], axis=0, ignore_index=True)
 
 #Data preparation #2
 
